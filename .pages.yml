@@ -1,0 +1,13 @@
+
+content:
+  - name: homepage
+    label: Home Page
+    type: file
+    path: homepage.json
+    fields:
+      - name: title
+        label: Website Title
+        type: string
+      - name: description
+        label: Description
+        type: text
