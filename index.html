@@ -7,7 +7,21 @@
   <title>Yoga with Qi</title>
 </head>
 <body>
-  <h1>Yoga with Qi</h1>
-  <p>A space to practice, explore, and grow.</p>
+  <h1 id="title">Yoga with Qi</h1>
+  <p id="description">A space to practice, explore, and grow.</p>
+
+  <script>
+    fetch('/homepage.json')
+      .then(response => {
+        if (!response.ok) throw new Error('Content not found');
+        return response.json();
+      })
+      .then(data => {
+        document.getElementById('title').textContent = data.title;
+        document.getElementById('description').textContent = data.description;
+      })
+      .catch(error => console.error('Unable to load homepage:', error));
+  </script>
 </body>
 </html>
+
